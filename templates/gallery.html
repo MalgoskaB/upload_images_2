@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Gallery</title>
+    <link rel="stylesheet" href="static/css/my_style.css" type="text/css" />
+</head>
+
+<body>
+
+
+    <div class = "container">
+        <div class="search">
+
+            <form action="/gallery" method="GET">
+                <p>Search by name...</p>
+                <input type="search" name="query" id="query" placeholder="Search">
+                <input type = "submit">Search
+
+            </form>
+
+        </div>
+
+        <div class="gallery">
+            {% for i in list %}
+                <img class="image" src="static/upload/{{i}}">
+                    <p>{%print i%}</p>
+            {%endfor%}
+        </div>
+
+    </div>
+
+    <p><a href="/">Back to uploading images</a></p>
+
+
+</body>
+
+</html>
